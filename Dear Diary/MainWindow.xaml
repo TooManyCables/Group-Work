@@ -1,0 +1,35 @@
+﻿<Window x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Dear Diary" Width="525" Height="350" ResizeMode="CanMinimize"
+    Icon="E:\SDD (USB)\Assessments\Assessment Two\Dear Diary\Dear Diary\Images\Logo.ico">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="125*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0,0,327,0" Background="LightBlue" Grid.ColumnSpan="2" >
+
+            <Label  Margin="5,0,18,260"    Content="No recent activity." />
+            <Label  Margin="5,129,18,130"  Content="Hello World!"        />
+            <Label  Margin="5,194,18,65"   Content="Hello World!"        />
+            <Label  Margin="5,259,18,0"    Content="Hello World!"        />
+            <Label  Margin="5,64,18,195"   Content="Hello World!"        />
+
+        </Grid>
+
+        <Grid Margin="38,0,0,0" Background="AliceBlue" Grid.Column="1" >
+
+            <TextBlock Text="Dear Diary" Margin="89,96,89,185" TextAlignment="Center" FontSize="16" TextDecorations="Underline" FontFamily="Sylfaen" />
+            <Button Click="Button_Click" Content="_Search..." Margin="89,256,89,35" />
+
+
+        </Grid>
+
+
+    </Grid>
+
+
+
+</Window>
