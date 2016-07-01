@@ -7,8 +7,8 @@
 
         'Make the code, and if there's time, create a transition animation.
 
-        Dim Selc As New Selection
-        Selc.Show()
+        Dim winSelc As New Selection
+        winSelc.Show()
         Me.Close()
 
     End Sub

@@ -4,6 +4,8 @@
     Title="Dear Diary"
     Width="525" Height="350" MinWidth="525" MinHeight="350">
 
+    <!-- Written by Steven. -->
+    
     <Grid>
         <Grid Margin="0,0,327,0" Background="LightBlue" >
 
