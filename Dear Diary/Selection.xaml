@@ -35,7 +35,7 @@
 
         <GroupBox Header="January" Grid.Column="1" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" BorderBrush="{x:Null}" >
          
-            <Grid x:Uid="0" Margin="3,5" Width="89">
+            <Grid x:Name="grdJanuary" Margin="3,5" Width="89">
                 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
