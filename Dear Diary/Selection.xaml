@@ -47,6 +47,14 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 
+               <!-- <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions> -->
+                
                 <!-- Row definitions are defined in code. -->
                 
             </Grid>

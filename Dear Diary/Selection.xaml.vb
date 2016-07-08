@@ -10,17 +10,6 @@
     End Sub
 
 
-    Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
-
-        'This is the code to return to main window.
-
-        Dim winMenu As New MainWindow
-        winMenu.Show()
-        Me.Close()
-
-    End Sub
-
-
     Private Sub _ArrangeMonths()
 
         'Date.DaysInMonth(Year, Month)
@@ -32,7 +21,7 @@
 
         'Perfect!
 
-        Dim strDate As String, Year As UInteger = Now.Year
+        Dim strDate As String, Year As Integer = Now.Year
 
         If cmbSelcYear.SelectedIndex = 1 Then
             Year -= 1
@@ -52,30 +41,44 @@
             'It works by rounding up the amount of days in the 1-12 month value of c, adding a 0-based
             'number that returns a number on what day the month starts on, then deviding by seven, which is a week.
 
-            'I come up with this by myself, and without having to search for any methods that make this up.
-
-            Dim WeeksInMonth As Single = (Math.Ceiling(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
+            Dim WeeksInMonth As Single = (Math.Floor(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
 
 
-            For DefCount As UInt16 = 0 To CInt(WeeksInMonth)
+            If c = 0 Then
 
+                For DefCount As UInt16 = 0 To CInt(WeeksInMonth)
+                    grdJanuary.RowDefinitions.Add(New RowDefinition With {.Height = New GridLength(1, GridUnitType.Star)})
 
+                Next
 
-            Next
+            End If
             'DefCount -- Count for row definitions.
 
+            grdJanuary.ShowGridLines = True
 
-            'Use Weekday(strDate)) here to find where the first button goes.
+            'Use Weekday(strDate) here to find where the first button goes.
+
+            Dim Positions(grdJanuary.ColumnDefinitions.Count - 1, grdJanuary.RowDefinitions.Count - 1) As Integer
+            Dim Finder As UInt16 = 6
 
             For ButtonCount As UInt16 = 0 To Date.DaysInMonth(Year, c + 1)
 
+                If ButtonCount = 0 Then
 
+                    Positions = (0,0)
+
+                End If
+
+                If Finder = 6 Then
+
+                End If
 
             Next
             'ButtonCount -- Count for the amount of buttons created for days.
 
         Next
 
+        Debug.Write("")
 
     End Sub
 End Class

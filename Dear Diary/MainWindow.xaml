@@ -9,11 +9,11 @@
     <Grid>
         <Grid Margin="0,0,327,0" Background="LightBlue" >
 
-            <Label  Margin="5,0,5,260"    Content="No recent activity." />
-            <Label  Margin="5,129,5,130"  Content="Hello World!"        />
-            <Label  Margin="5,194,5,65"   Content="Hello World!"        />
-            <Label  Margin="5,259,5,0"    Content="Hello World!"        />
-            <Label  Margin="5,64,5,195"   Content="Hello World!"        />
+            <Label  Margin="5,0,5,260" Content="No recent activity." />
+            <Label  Margin="5,129,5,130" Content="Hello World!"/>
+            <Label  Margin="5,194,5,65" Content="Hello World!"/>
+            <Label  Margin="5,259,5,0" Content="Hello World!"/>
+            <Label  Margin="5,64,5,195" Content="Hello World!"/>
 
         </Grid>
 
