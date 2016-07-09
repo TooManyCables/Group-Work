@@ -29,14 +29,10 @@
 
         </Grid.RowDefinitions>
 
-
-
-        <!-- Above are all rectangles within the menu, collapsed. -->
-
-        <GroupBox Header="January" Grid.Column="1" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" BorderBrush="{x:Null}" >
+        <GroupBox Header="January" Grid.Column="1" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
          
-            <Grid x:Name="grdJanuary" Margin="3,5" Width="89">
-                
+           <Grid x:Name="grdJanuary">
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
@@ -46,35 +42,192 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                
-               <!-- <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions> -->
-                
-                <!-- Row definitions are defined in code. -->
+
+        <!-- Row definitions are defined in the selection vb file. -->
                 
             </Grid>
         </GroupBox>
+        <GroupBox Header="Febuary" Grid.Column="2" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
 
-        <GroupBox Header="Febuary" Grid.Column="2" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
-        <GroupBox Header="March" Grid.Column="3" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
-        <GroupBox Header="April" Grid.Column="4" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
+            <Grid x:Name="grdFebruary">
 
-        <GroupBox Header="May" Grid.Column="1" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="2" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
-        <GroupBox Header="June" Grid.Column="2" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="2" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
-        <GroupBox Header="July" Grid.Column="3" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="2" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
-        <GroupBox Header="August" Grid.Column="4" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="2" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
 
-        <GroupBox Header="September" Grid.Column="1" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="3" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
-        <GroupBox Header="October" Grid.Column="2" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="3" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
-        <GroupBox Header="November" Grid.Column="3" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="3" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
-        <GroupBox Header="December" Grid.Column="4" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="3" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0" />
+            </Grid>
+        </GroupBox>
 
-        <!-- Above are the labels that appear on the rectangles. -->
+        <GroupBox Header="March" Grid.Column="3" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdMarch">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="April" Grid.Column="4" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdApril">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="May" Grid.Column="1" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="2" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdMay">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="June" Grid.Column="2" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="2" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdJune">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="July" Grid.Column="3" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="2" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdJuly">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="August" Grid.Column="4" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="2" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdAugust">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="September" Grid.Column="1" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="3" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdSeptember">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="October" Grid.Column="2" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="3" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdOctober">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="November" Grid.Column="3" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="3" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdNovember">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="December" Grid.Column="4" HorizontalAlignment="Left" Margin="6,-2,0,0" Grid.Row="3" VerticalAlignment="Top" Height="87" Width="102" Background="LightBlue" BorderThickness="0">
+
+            <Grid x:Name="grdDecember">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+        </GroupBox>
+
+        <!-- Above are the Groupboxes that are months. -->
 
         <ComboBox x:Name="cmbSelcYear" Height="25" Grid.Column="4" Margin="8,14,5,0" ToolTip="The year to find entry in." SelectedIndex="0">
 

@@ -9,17 +9,19 @@
 
     End Sub
 
-
     Private Sub _ArrangeMonths()
 
-        'Date.DaysInMonth(Year, Month)
-        'Weekday(DateValue As Date)
+        'Date.DaysInMonth(Year, Month) - Returns a number on what days on month is in the two values.
+        'Weekday(DateValue As Date) - Returns a non-zero based number on what day of week DateValue is valued.
 
         ' 1. Arrange each month by finding what day of week they start.
         ' 2. Find their length, including number of weeks.
         ' 3. Output to the user.
 
         'Perfect!
+
+        grdJanuary.RowDefinitions.Clear()
+
 
         Dim strDate As String, Year As Integer = Now.Year
 
@@ -31,52 +33,73 @@
 
         End If
 
+        Dim Grids As New List(Of Grid)
+        Grids.Add(grdJanuary)
+        Grids.Add(grdFebruary)
+        Grids.Add(grdMarch)
+        Grids.Add(grdApril)
+        Grids.Add(grdMay)
+        Grids.Add(grdJune)
+        Grids.Add(grdJuly)
+        Grids.Add(grdAugust)
+        Grids.Add(grdSeptember)
+        Grids.Add(grdOctober)
+        Grids.Add(grdNovember)
+        Grids.Add(grdDecember)
+
         For c As UInt16 = 0 To 11
 
-            strDate = "1/" & c + 1 & "/" & Year
+                strDate = "1/" & c + 1 & "/" & Year
 
-            'Define row definitions by figuring out how many weeks in the current month.
-            'Below I've come up with the formula to figure out how to do that.
+                'Define row definitions by figuring out how many weeks in the current month.
+                'Below I've come up with the formula to figure out how to do that.
 
-            'It works by rounding up the amount of days in the 1-12 month value of c, adding a 0-based
-            'number that returns a number on what day the month starts on, then deviding by seven, which is a week.
+                'It works by rounding up the amount of days in the 1-12 month value of c, adding a 0-based
+                'number that returns a number on what day the month starts on, then deviding by seven, which is a week.
 
-            Dim WeeksInMonth As Single = (Math.Floor(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
-
-
-            If c = 0 Then
+                Dim WeeksInMonth As Single = (Math.Floor(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
 
                 For DefCount As UInt16 = 0 To CInt(WeeksInMonth)
-                    grdJanuary.RowDefinitions.Add(New RowDefinition With {.Height = New GridLength(1, GridUnitType.Star)})
+                    Grids(c).RowDefinitions.Add(New RowDefinition With {.Height = New GridLength(1, GridUnitType.Star)})
 
                 Next
+                'DefCount -- Count for row definitions.
 
-            End If
-            'DefCount -- Count for row definitions.
+                'Grids(c).ShowGridLines = True
 
-            grdJanuary.ShowGridLines = True
 
-            'Use Weekday(strDate) here to find where the first button goes.
+                Dim btnDay(30) As Button, x As UInt16 = Weekday(strDate) - 1, y As UInt16 = 0
 
-            Dim Positions(grdJanuary.ColumnDefinitions.Count - 1, grdJanuary.RowDefinitions.Count - 1) As Integer
-            Dim Finder As UInt16 = 6
+                For ButtonCount As UInt16 = 0 To Date.DaysInMonth(Year, c + 1) - 1
 
-            For ButtonCount As UInt16 = 0 To Date.DaysInMonth(Year, c + 1)
+                    btnDay(ButtonCount) = New Button With {.Content = ButtonCount + 1, .BorderBrush = Brushes.Transparent, .Background = Brushes.Transparent, .FontSize = 6.5, .FontWeight = FontWeights.Bold}
 
-                If ButtonCount = 0 Then
+                    Grids(c).Children.Add(btnDay(ButtonCount))
 
-                    Positions = (0,0)
+                    Grid.SetColumn(btnDay(ButtonCount), x)
+                    Grid.SetRow(btnDay(ButtonCount), y)
 
-                End If
+                    x += 1
 
-                If Finder = 6 Then
+                    If x = 7 Then
 
-                End If
+                        x = 0
+                        y += 1
 
-            Next
-            'ButtonCount -- Count for the amount of buttons created for days.
+                    End If
+
+                Next
+                'ButtonCount -- Count for the amount of buttons created for days.
 
         Next
+
+        'Here is where the current day has to be found.
+
+        '1. Loop through each month until the value is the same as the current month.
+        '2. When it is found, get the button that has its content the same as the current day.
+
+
+        Grids(Now.Month - 1).Children.Item(Now.Day - 1).Focus()
 
         Debug.Write("")
 
