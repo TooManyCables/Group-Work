@@ -57,9 +57,9 @@
             'It works by rounding down the amount of days in the 1-12 month value of c, adding a 0-based
             'number that returns a number on what day the month starts on, then deviding by seven, which is a week.
 
-            Dim WeeksInMonth As Single = (Math.Floor(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
+            Dim WeeksInMonth As Integer = (Math.Floor(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
 
-            For DefCount As UInt16 = 0 To CInt(WeeksInMonth)
+            For DefCount As UInt16 = 0 To WeeksInMonth
                 Grids(c).RowDefinitions.Add(New RowDefinition With {.Height = New GridLength(1, GridUnitType.Star)})
 
             Next
@@ -68,19 +68,13 @@
             'Grids(c).ShowGridLines = True
 
 
-            Dim Buttons(30) As Button, x As UInt16 = Weekday(strDate) - 1, y As UInt16 = 0
+            Dim Buttons(Date.DaysInMonth(Year, c + 1)) As Button, x As UInt16 = Weekday(strDate) - 1, y As UInt16 = 0
 
             For ButtonCount As UInt16 = 0 To Date.DaysInMonth(Year, c + 1) - 1
 
                 Buttons(ButtonCount) = New Button With {.Content = ButtonCount + 1, .BorderBrush = Brushes.Transparent, .Background = Brushes.Transparent, .FontSize = 6.5, .FontWeight = FontWeights.Bold}
 
-                'Buttons(ButtonCount).Name = _NameButton(Buttons(ButtonCount))
-
-                AddHandler Buttons(ButtonCount).Click, Sub(sender As Object, e As RoutedEventArgs)
-
-                                                           MsgBox("Hi")
-
-                                                       End Sub
+                AddHandler Buttons(ButtonCount).Click, AddressOf DateButton
 
                 Grids(c).Children.Add(Buttons(ButtonCount))
 
@@ -112,7 +106,7 @@
         btnToday.BorderBrush = Brushes.SteelBlue
         btnToday.Background = Brushes.LightSkyBlue
 
-        'Debug.Write("")
+        'Debug.Write("hey")
 
     End Sub
 
@@ -126,9 +120,9 @@
     '    Return 0
     'End Function
 
-    Private Sub DateButton_Click(ByVal sender As Object, ByRef e As RoutedEventArgs)
+    Private Sub DateButton(sender As Object, e As RoutedEventArgs)
 
-        MessageBox.Show(sender.Content)
+        MessageBox.Show("Hi")
 
     End Sub
 
