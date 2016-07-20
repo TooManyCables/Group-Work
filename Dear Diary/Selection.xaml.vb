@@ -49,59 +49,87 @@
 
         For c As UInt16 = 0 To 11
 
-                strDate = "1/" & c + 1 & "/" & Year
+            strDate = "1/" & c + 1 & "/" & Year
 
-                'Define row definitions by figuring out how many weeks in the current month.
-                'Below I've come up with the formula to figure out how to do that.
+            'Define row definitions by figuring out how many weeks in the current month.
+            'Below I've come up with the formula to figure out how to do that.
 
-                'It works by rounding up the amount of days in the 1-12 month value of c, adding a 0-based
-                'number that returns a number on what day the month starts on, then deviding by seven, which is a week.
+            'It works by rounding down the amount of days in the 1-12 month value of c, adding a 0-based
+            'number that returns a number on what day the month starts on, then deviding by seven, which is a week.
 
-                Dim WeeksInMonth As Single = (Math.Floor(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
+            Dim WeeksInMonth As Single = (Math.Floor(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
 
-                For DefCount As UInt16 = 0 To CInt(WeeksInMonth)
-                    Grids(c).RowDefinitions.Add(New RowDefinition With {.Height = New GridLength(1, GridUnitType.Star)})
+            For DefCount As UInt16 = 0 To CInt(WeeksInMonth)
+                Grids(c).RowDefinitions.Add(New RowDefinition With {.Height = New GridLength(1, GridUnitType.Star)})
 
-                Next
-                'DefCount -- Count for row definitions.
+            Next
+            'DefCount -- Count for row definitions.
 
-                'Grids(c).ShowGridLines = True
+            'Grids(c).ShowGridLines = True
 
 
-                Dim btnDay(30) As Button, x As UInt16 = Weekday(strDate) - 1, y As UInt16 = 0
+            Dim Buttons(30) As Button, x As UInt16 = Weekday(strDate) - 1, y As UInt16 = 0
 
-                For ButtonCount As UInt16 = 0 To Date.DaysInMonth(Year, c + 1) - 1
+            For ButtonCount As UInt16 = 0 To Date.DaysInMonth(Year, c + 1) - 1
 
-                    btnDay(ButtonCount) = New Button With {.Content = ButtonCount + 1, .BorderBrush = Brushes.Transparent, .Background = Brushes.Transparent, .FontSize = 6.5, .FontWeight = FontWeights.Bold}
+                Buttons(ButtonCount) = New Button With {.Content = ButtonCount + 1, .BorderBrush = Brushes.Transparent, .Background = Brushes.Transparent, .FontSize = 6.5, .FontWeight = FontWeights.Bold}
 
-                    Grids(c).Children.Add(btnDay(ButtonCount))
+                'Buttons(ButtonCount).Name = _NameButton(Buttons(ButtonCount))
 
-                    Grid.SetColumn(btnDay(ButtonCount), x)
-                    Grid.SetRow(btnDay(ButtonCount), y)
+                AddHandler Buttons(ButtonCount).Click, Sub(sender As Object, e As RoutedEventArgs)
 
-                    x += 1
+                                                           MsgBox("Hi")
 
-                    If x = 7 Then
+                                                       End Sub
 
-                        x = 0
-                        y += 1
+                Grids(c).Children.Add(Buttons(ButtonCount))
 
-                    End If
+                Grid.SetColumn(Buttons(ButtonCount), x)
+                Grid.SetRow(Buttons(ButtonCount), y)
 
-                Next
-                'ButtonCount -- Count for the amount of buttons created for days.
+                x += 1
+
+                If x = 7 Then
+
+                    x = 0
+                    y += 1
+
+                End If
+
+            Next
+            'ButtonCount -- Count for the amount of buttons created for days.
 
         Next
 
         'Here is where the current day has to be found.
 
-        '1. Loop through each month until the value is the same as the current month.
-        '2. When it is found, get the button that has its content the same as the current day.
+        '1. Get the grid that its index is the same as the current month.
+        '2. Get its child element with the index of today minus one,
+        '3. Set its properties.
 
+        Dim btnToday As Button = Grids(Now.Month - 1).Children.Item(Now.Day - 1)
 
-        Grids(Now.Month - 1).Children.Item(Now.Day - 1).Focus()
+        btnToday.BorderBrush = Brushes.SteelBlue
+        btnToday.Background = Brushes.LightSkyBlue
 
-        Debug.Write("")
+        'Debug.Write("")
 
     End Sub
+
+    'Private Function _NameButton(location As Button)
+
+    '    'Method provides a way to give a button an identifier, rather than
+    '    'referencing it through other ways, such as an index from a list.
+
+
+
+    '    Return 0
+    'End Function
+
+    Private Sub DateButton_Click(ByVal sender As Object, ByRef e As RoutedEventArgs)
+
+        MessageBox.Show(sender.Content)
+
+    End Sub
+
 End Class
