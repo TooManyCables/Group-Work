@@ -88,3 +88,23 @@ C:\Users\steven\Desktop\Visual Studio Projects\School\Assessments\Assessment Two
 C:\Users\steven\Desktop\Visual Studio Projects\School\Assessments\Assessment Two - Team Work\Meh\Dear Diary\obj\Debug\Dear Diary.g.resources
 C:\Users\steven\Desktop\Visual Studio Projects\School\Assessments\Assessment Two - Team Work\Meh\Dear Diary\obj\Debug\Dear_Diary.Resources.resources
 C:\Users\steven\Desktop\Visual Studio Projects\School\Assessments\Assessment Two - Team Work\Meh\Dear Diary\obj\Debug\Dear Diary.vbproj.GenerateResource.Cache
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\bin\Debug\Dear Diary.exe.config
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Dear Diary.exe
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Dear Diary.xml
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Dear Diary.pdb
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\bin\Debug\Dear Diary.exe
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\bin\Debug\Dear Diary.pdb
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\bin\Debug\Dear Diary.xml
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Document.baml
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\MainWindow.baml
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Selection.baml
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Document.g.vb
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\MainWindow.g.vb
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Selection.g.vb
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Application.g.vb
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Dear Diary_MarkupCompile.cache
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Dear Diary.g.resources
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Dear_Diary.Resources.resources
+C:\Users\tyler.johnstone1\Documents\Group-Work\Dear Diary\obj\Debug\Dear Diary.vbproj.GenerateResource.Cache
+C:\Users\steven\Desktop\Visual Studio Projects\School\Assessments\Assessment Two - Team Work\Meh\Dear Diary\obj\Debug\Document.baml
+C:\Users\steven\Desktop\Visual Studio Projects\School\Assessments\Assessment Two - Team Work\Meh\Dear Diary\obj\Debug\Document.g.vb

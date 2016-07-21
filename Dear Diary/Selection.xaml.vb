@@ -7,6 +7,10 @@
         'This is called when the selection window opens.
         _ArrangeMonths()
 
+        Dim winDoc As New Document
+        winDoc.Show()
+
+
     End Sub
 
     Private Sub _ArrangeMonths()
@@ -106,7 +110,7 @@
         btnToday.BorderBrush = Brushes.SteelBlue
         btnToday.Background = Brushes.LightSkyBlue
 
-        'Debug.Write("hey")
+        'Debug.Write("")
 
     End Sub
 
