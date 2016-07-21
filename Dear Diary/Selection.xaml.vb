@@ -7,6 +7,10 @@
         'This is called when the selection window opens.
         _ArrangeMonths()
 
+        Dim winDoc As New Document
+        winDoc.Show()
+
+
     End Sub
 
     Private Sub _ArrangeMonths()
@@ -95,13 +99,17 @@
 
         'Here is where the current day has to be found.
 
-        '1. Loop through each month until the value is the same as the current month.
-        '2. When it is found, get the button that has its content the same as the current day.
+        '1. Get the grid that its index is the same as the current month.
+        '2. Get its child element with the index of today minus one,
+        '3. Set its properties.
 
 
-        Grids(Now.Month - 1).Children.Item(Now.Day - 1).Focus()
+        Dim btnToday As Button = Grids(Now.Month - 1).Children.Item(Now.Day - 1)
 
-        Debug.Write("")
+        btnToday.BorderBrush = Brushes.SteelBlue
+        btnToday.Background = Brushes.LightSkyBlue
+
+        'Debug.Write("")
 
     End Sub
 End Class

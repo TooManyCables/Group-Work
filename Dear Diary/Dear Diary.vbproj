@@ -66,9 +66,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Document.xaml.vb">
+      <DependentUpon>Document.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Selection.xaml.vb">
       <DependentUpon>Selection.xaml</DependentUpon>
     </Compile>
+    <Page Include="Document.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
