@@ -3,7 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         
     Title="Document" Width="525" Height="350" MinWidth="525" MaxHeight="350"
-    Background="AliceBlue">
+    Background="AliceBlue" 
+        
+    Closing="Window_Closing">
 
     <Grid>
 

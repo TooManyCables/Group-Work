@@ -2,14 +2,26 @@
 
     'Written by Steven.
 
-    Private Sub cmbSelcYear_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbSelcYear.SelectionChanged
+    Public ComboboxIndexVal As UInt16 = 0
+
+    Sub New()
+
+        InitializeComponent()
 
         'This is called when the selection window opens.
         _ArrangeMonths()
 
-        Dim winDoc As New Document
-        winDoc.Show()
 
+    End Sub
+
+    Private Sub cmbSelcYear_LostFocus(sender As Object, e As RoutedEventArgs) Handles cmbSelcYear.LostFocus
+
+        If ComboboxIndexVal <> cmbSelcYear.SelectedIndex Then
+
+            ComboboxIndexVal = cmbSelcYear.SelectedIndex
+            _ArrangeMonths()
+
+        End If
 
     End Sub
 
@@ -51,9 +63,9 @@
         Grids.Add(grdNovember)
         Grids.Add(grdDecember)
 
-        For c As UInt16 = 0 To 11
+        For m As UInt16 = 0 To 11
 
-            strDate = "1/" & c + 1 & "/" & Year
+            strDate = "1/" & m + 1 & "/" & Year
 
             'Define row definitions by figuring out how many weeks in the current month.
             'Below I've come up with the formula to figure out how to do that.
@@ -61,10 +73,9 @@
             'It works by rounding down the amount of days in the 1-12 month value of c, adding a 0-based
             'number that returns a number on what day the month starts on, then deviding by seven, which is a week.
 
-            Dim WeeksInMonth As Integer = (Math.Floor(((Date.DaysInMonth(Year, c + 1)) + (Weekday(strDate) - 1)) / 7))
+            For DefCount As UInt16 = 0 To (Math.Floor(((Date.DaysInMonth(Year, m + 1)) + (Weekday(strDate) - 1)) / 7))
 
-            For DefCount As UInt16 = 0 To WeeksInMonth
-                Grids(c).RowDefinitions.Add(New RowDefinition With {.Height = New GridLength(1, GridUnitType.Star)})
+                Grids(m).RowDefinitions.Add(New RowDefinition With {.Height = New GridLength(1, GridUnitType.Star)})
 
             Next
             'DefCount -- Count for row definitions.
@@ -72,15 +83,16 @@
             'Grids(c).ShowGridLines = True
 
 
-            Dim Buttons(Date.DaysInMonth(Year, c + 1)) As Button, x As UInt16 = Weekday(strDate) - 1, y As UInt16 = 0
+            Dim Buttons(Date.DaysInMonth(Year, m + 1)) As Button, x As UInt16 = Weekday(strDate) - 1, y As UInt16 = 0
 
-            For ButtonCount As UInt16 = 0 To Date.DaysInMonth(Year, c + 1) - 1
+            For ButtonCount As UInt16 = 0 To Date.DaysInMonth(Year, m + 1) - 1
 
-                Buttons(ButtonCount) = New Button With {.Content = ButtonCount + 1, .BorderBrush = Brushes.Transparent, .Background = Brushes.Transparent, .FontSize = 6.5, .FontWeight = FontWeights.Bold}
+                Buttons(ButtonCount) = New Button With {.Content = ButtonCount + 1, .Tag = m + 1, .BorderBrush = Brushes.Transparent, .Background = Brushes.Transparent, .FontSize = 6.5, .FontWeight = FontWeights.Bold}
 
                 AddHandler Buttons(ButtonCount).Click, AddressOf DateButton
 
-                Grids(c).Children.Add(Buttons(ButtonCount))
+
+                Grids(m).Children.Add(Buttons(ButtonCount))
 
                 Grid.SetColumn(Buttons(ButtonCount), x)
                 Grid.SetRow(Buttons(ButtonCount), y)
@@ -114,19 +126,51 @@
 
     End Sub
 
-    'Private Function _NameButton(location As Button)
-
-    '    'Method provides a way to give a button an identifier, rather than
-    '    'referencing it through other ways, such as an index from a list.
-
-
-
-    '    Return 0
-    'End Function
-
     Private Sub DateButton(sender As Object, e As RoutedEventArgs)
 
-        MessageBox.Show("Hi")
+        '1. Find what year the has selected using the index of the cmb.
+        '2. Check if the user has a file on that date.
+        '3a. If so, open the document window and load the text from the file.
+        '3b. If not, open the window without loading anything.
+
+        Dim Year As UInteger = Now.Year - 2000
+
+        If cmbSelcYear.SelectedIndex = 1 Then
+
+            Year += 1
+
+        ElseIf cmbSelcYear.SelectedIndex = 2 Then
+
+            Year -= 1
+
+        End If
+
+
+        'The d/m/y is included with the class for saving purposes.
+        Dim winDoc As New Document With {.Title = "Dear Diary - " & sender.content & "/" & sender.tag & "/" & Year + 2000, .Day = sender.Content, .Month = sender.tag + 1, .Year = Year}
+
+        If IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory & "Save Files\" & sender.Content & "-" & sender.tag & "-" & Year & ".txt") Then
+
+            'Get the text from the file, put it into the textbox.
+
+            Dim filelines() As String = IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory & "Save Files\" & sender.Content & "-" & sender.tag & "-" & Year & ".txt")
+
+
+            For l As UInt16 = 0 To filelines.Length - 1
+
+                winDoc.rtxContent.AppendText(filelines(l))
+
+                If l < filelines.Length - 1 Then
+                    winDoc.rtxContent.AppendText(vbCr)
+                End If
+
+            Next
+
+
+        End If
+
+        winDoc.Show()
+        Me.Close()
 
     End Sub
 

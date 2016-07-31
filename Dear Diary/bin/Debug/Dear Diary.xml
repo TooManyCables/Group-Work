@@ -6,13 +6,13 @@ DearDiary
 </name>
 </assembly>
 <members>
-<member name="M:Dear_Diary.MainWindow.InitializeComponent">
+<member name="M:Dear_Diary.Document.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
-</member><member name="T:Dear_Diary.MainWindow">
+</member><member name="T:Dear_Diary.Document">
 	<summary>
-MainWindow
+Document
 </summary>
 </member><member name="M:Dear_Diary.Selection.InitializeComponent">
 	<summary>
@@ -34,26 +34,13 @@ Application Entry Point.
 	<summary>
 Application
 </summary>
-</member><member name="M:Dear_Diary.Document.InitializeComponent">
+</member><member name="M:Dear_Diary.MainWindow.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
-</member><member name="T:Dear_Diary.Document">
+</member><member name="T:Dear_Diary.MainWindow">
 	<summary>
-Document
-</summary>
-</member><member name="P:Dear_Diary.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:Dear_Diary.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:Dear_Diary.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
+MainWindow
 </summary>
 </member><member name="P:Dear_Diary.My.MyWpfExtension.Application">
 	<summary>
@@ -81,6 +68,19 @@ Document
  Module used to define the properties that are available in the My Namespace for WPF
  </summary>
 	<remarks></remarks>
+</member><member name="P:Dear_Diary.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Dear_Diary.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Dear_Diary.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
 </member>
 </members>
 </doc>

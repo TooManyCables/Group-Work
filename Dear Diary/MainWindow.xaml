@@ -20,7 +20,7 @@
         <Grid Margin="180,0,0,0" Background="AliceBlue" >
 
             <TextBlock Text="Dear Diary" Margin="89,96,89,185" TextAlignment="Center" FontSize="16" TextDecorations="Underline" FontFamily="Sylfaen" />
-            <Button x:Name="btnSearch" Click="Button_Click" Content="_Search..." Margin="89,256,89,35" />
+            <Button x:Name="btnSearch" Content="_Search..." Margin="89,256,89,35" />
 
 
         </Grid>
